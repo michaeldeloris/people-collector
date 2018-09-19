@@ -1,28 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormControl, Validators, FormsModule, ReactiveFormsModule, NgForm,} from '@angular/forms';
 
 @Component({
   selector: 'form-toolbar',
   templateUrl: './form-toolbar.component.html',
   styleUrls: ['./form-toolbar.component.css']
 })
-export class FormToolbarComponent implements OnInit {
+export class FormToolbarComponent{
 
-  constructor() { 
+  pattern = '^[a-zA-Z]+(([\',. -][a-zA-Z ])?[a-zA-Z]*)*$';
+  nameCheck = new FormControl('', [Validators.required, Validators.pattern(this.pattern)]);
 
-    
-  }
-
-  ngOnInit() {
-  }
-
-  regex = new RegExp(/[A-Z][a-z]/);
-  nameCheck = new FormControl('', [Validators.required, Validators.pattern(this.regex)]);
-  
   getErrorMessage() {
     return this.nameCheck.hasError('required') ? 'You must enter a value' :
-        this.nameCheck.hasError('email') ? 'Not a valid email' :
+        this.nameCheck.hasError('pattern') ? 'Please input letters only.' :
             '';
   }
-
 }

@@ -1,6 +1,7 @@
-<div class="example-container">
+<div style="margin:auto">
     <mat-form-field>
-      <input matInput placeholder="Enter a name here" [formControl]="nameCheck" required>
-      <mat-error *ngIf="Letters only please">{{getErrorMessage()}}</mat-error>
+        <input type="text" matInput placeholder="Enter a name here" [formControl]="nameCheck" required>
+        <mat-error *ngIf="nameCheck.invalid">{{getErrorMessage()}}</mat-error>
     </mat-form-field>
-  </div>
+</div>
+ 
