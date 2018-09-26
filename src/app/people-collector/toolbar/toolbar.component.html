@@ -1,16 +1,21 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<mat-toolbar color='primary'>
-  <a class="spacer" href="/home">People-Collector</a>
 
-  <button mat-icon-button style="margin-left: 640px">
-      <a href="/addPeople">
-        <mat-icon>person_add</mat-icon>
-      </a>
-  </button>
-  <button mat-icon-button style="margin-left: 15px">
-    <a href="/collection">
-      <mat-icon>list</mat-icon>
+<mat-toolbar color='primary'>
+
+  <a class="title-spacer" href="/home">People-Collector </a>
+
+  <div class="buttons-spacer">
+  <button mat-icon-button class="button">
+    <a  href="/addPeople">
+      <mat-icon class="icon">person_add</mat-icon>
     </a>
   </button>
+
+  <button mat-icon-button class="button">
+    <a href="/collection">
+      <mat-icon class="icon">list</mat-icon>
+    </a>
+  </button>
+</div>
 
 </mat-toolbar>

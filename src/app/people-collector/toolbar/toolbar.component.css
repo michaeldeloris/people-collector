@@ -1,18 +1,21 @@
-.spacer{
-    margin-left: 680px
-}
-
-a {
-    color:inherit;
-    text-decoration: none;
-}
-
-mat-icon{
+.icon {
+    color: white;
     position: absolute;
-    top: 30%;
-    left: 30%;
+    top: 33%;
+    left: 35%;
+    height: 50%;
     transform: translate(-50%, -50%);
     width: 10px;
     height: 10px;
     display: block;
+}
+
+.title-spacer{
+    color: white;   
+    text-decoration: none;
+    margin-left: 690px;
+}
+
+.buttons-spacer{
+    margin-left: 640px;
 }

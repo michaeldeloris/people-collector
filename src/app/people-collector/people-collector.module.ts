@@ -7,9 +7,12 @@ import { PeopleCollectorRoutingModule } from './people-collector-routing/people-
 import { SharedModule } from '../shared/shared.module';
 import { AddPeopleComponent } from './add-people/add-people.component';
 import { FormToolbarComponent } from './form-toolbar/form-toolbar.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { HttpClientModule } from  '@angular/common/http';
 
 @NgModule({
   imports: [
+    MatGridListModule,
     CommonModule,
     PeopleCollectorRoutingModule,
     SharedModule,
@@ -20,11 +23,14 @@ import { FormToolbarComponent } from './form-toolbar/form-toolbar.component';
     ToolbarComponent,
     AddPeopleComponent,
     FormToolbarComponent,
-    
+
   ],
   exports: [
     PeopleCollectorComponent,
     CollectionComponent
+  ],
+  providers: [
+    HttpClientModule,
   ]
 })
 export class PeopleCollectorModule { }

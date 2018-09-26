@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PeopleService } from '../../shared/services/people.service';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'add-people',
@@ -7,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddPeopleComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public people : PeopleService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }

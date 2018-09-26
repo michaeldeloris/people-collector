@@ -1,7 +1,25 @@
-<div style="margin:auto">
-    <mat-form-field>
-        <input type="text" matInput placeholder="Enter a name here" [formControl]="nameCheck" required>
-        <mat-error *ngIf="nameCheck.invalid">{{getErrorMessage()}}</mat-error>
-    </mat-form-field>
+<div>
+    <mat-grid-list cols="3" rowHeight="3:1">
+
+        <mat-grid-tile></mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-form-field>
+                <input #peopleName id="peopleName" type="name" matInput placeholder="Enter your name here !"
+                    [formControl]="nameCheck" required>
+                <mat-error *ngIf="nameCheck.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list cols="3" rowHeight="3:1">
+
+        <mat-grid-tile></mat-grid-tile>
+
+        <mat-grid-tile>
+            <button id='button' (click)="newPeople(peopleName.value)" mat-fab color="primary" style="margin-bottom:115px">Add
+                !</button>
+        </mat-grid-tile>
+    </mat-grid-list>
+
 </div>
- 
