@@ -3,25 +3,23 @@
 </header>
 
 <body>
-        <mat-grid-list cols="5" rowHeight="1:1" rowWidth="150px">
-
-
-
-        </mat-grid-list>
-</body>
-
-<!-- 
-<h1>
-    My Contacts
-    </h1>
-    <div>
-    <table  style="width:100%">
-    <tr>
-        <th>First name</th>
-    </tr>
-    <tr *ngFor="let people of peoples">
-        <td> {{peoples.name}} </td>
-    </tr>
+    <table *ngIf="peoples">
+        <tr>
+            <th>Name</th>
+        </tr>
+        <tr *ngFor="let people of peoples">
+            <td> {{ people.name }} </td>
+        </tr>
     </table>
-    
-    </div> -->
+
+
+    <table *ngIf="trucs">
+        <tr>
+            <th>Trucs</th>
+        </tr>
+        <tr *ngFor="let truc of trucs">
+            <td> {{ truc.number }} </td>
+        </tr>
+
+    </table>
+</body>

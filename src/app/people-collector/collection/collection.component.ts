@@ -13,21 +13,25 @@ export class CollectionComponent implements OnInit {
 
   private people: People[];
 
+  private trucs = [
+    {number: 'un'},
+    {number: 'deux'},
+    {number: 'trois'}
+  ]
+
   constructor(
     private peopleService: PeopleService,
   ) { }
 
   ngOnInit() {
 
-    this.getPeoples();
+    this.peopleService.get().subscribe(
+      async (peoples: People[]) => {
+        this.people = await peoples;
+        console.log(peoples);
+      }  );
+      
   }
 
-  public getPeoples() {
-
-    let people = this.peopleService.get();
-
-    console.log(people);
-    
-
-  }
+  public getPeoples() {  }
 }

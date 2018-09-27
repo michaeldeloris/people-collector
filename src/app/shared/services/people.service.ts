@@ -1,14 +1,10 @@
 import { Injectable } from '@angular/core';
 import { People } from '../models/people.model';
-import { HttpClient, HttpHeaders, HttpErrorResponse, HttpClientModule } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { map, catchError, tap } from 'rxjs/operators';
 
 
 @Injectable({ providedIn: 'root' })
 export class PeopleService {
-
-    constructor() { }
 
     private peoples: People[] = [
 
@@ -17,18 +13,18 @@ export class PeopleService {
         { name: "Jojo" }
     ];
 
-    get() {
-        return this.peoples;
+    get(): Observable<People[]> {
+
+        return of(this.peoples);
     }
 
     post(people: People) {
+
+        console.log(`Push de \" ${people.name} \" en cours...`);
 
         this.peoples.push(people);
         console.log(this.peoples);
     }
 
-    delete() {
-
-    }
-
+    delete() { }
 }
