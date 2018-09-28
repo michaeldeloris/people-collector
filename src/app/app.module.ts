@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { PeopleCollectorModule } from './people-collector/people-collector.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { StorageServiceModule } from 'angular-webstorage-service';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     PeopleCollectorModule,
     BrowserAnimationsModule,
+    StorageServiceModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

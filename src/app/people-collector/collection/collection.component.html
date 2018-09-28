@@ -3,23 +3,13 @@
 </header>
 
 <body>
-    <table *ngIf="peoples">
-        <tr>
+    <table>
+        <tr *ngIf="people">
             <th>Name</th>
         </tr>
-        <tr *ngFor="let people of peoples">
+        <tr *ngFor="let people of people">
             <td> {{ people.name }} </td>
         </tr>
     </table>
 
-
-    <table *ngIf="trucs">
-        <tr>
-            <th>Trucs</th>
-        </tr>
-        <tr *ngFor="let truc of trucs">
-            <td> {{ truc.number }} </td>
-        </tr>
-
-    </table>
 </body>

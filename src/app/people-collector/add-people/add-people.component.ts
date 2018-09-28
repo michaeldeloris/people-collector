@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PeopleService } from '../../shared/services/people.service';
+import { PeopleLocalService } from '../../shared/services/people-local.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 
@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class AddPeopleComponent implements OnInit {
 
   constructor(
-    public people : PeopleService,
+    public people : PeopleLocalService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
