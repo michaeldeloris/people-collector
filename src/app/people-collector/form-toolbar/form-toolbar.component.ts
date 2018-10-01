@@ -39,10 +39,10 @@ export class FormToolbarComponent {
     } else {
 
       let newPeople: People = {
-
-        "id": -1,
+        "id": "",
         "name": peopleName
       };
+      
       this.peopleService.storeOnLocalStorage(newPeople);
     }
   }
