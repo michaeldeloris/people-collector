@@ -1,7 +1,7 @@
 
 export interface PeopleInterface{
 
-    id: number;
+    id: string;
     name: string;
     
 }
