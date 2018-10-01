@@ -2,14 +2,43 @@
     <toolbar></toolbar>
 </header>
 
-<body>
-    <table>
-        <tr *ngIf="people">
-            <th>Name</th>
-        </tr>
-        <tr *ngFor="let people of people">
-            <td> {{ people.name }} </td>
-        </tr>
-    </table>
+<body [ngSwitch]="people.length">
+
+    <div *ngSwitchDefault>
+        <table>
+            <tr>
+                <th>
+                    <h1>Collection</h1>
+                </th>
+            </tr>
+            <tr *ngFor="let people of people">
+                <mat-card>
+                    <mat-card-title>{{ people.name }}</mat-card-title>
+                    <mat-card-subtitle style='display:none'>{{ people.id }}</mat-card-subtitle>
+                    <mat-card-content>
+                        <p>
+                            Le mot chat vient du bas latin cattus, qui, d’après le Littré (édition de 1878),
+                            provient du verbe cattare, qui signifie guetter, ce félin étant alors considéré
+                            comme un chasseur qui guette sa proie. Cette interprétation porte cependant à
+                            controverse, au vu des termes utilisés dans certaines langues afro-asiatiques
+                            (berbère kadiska) ou nilo-sahariennes (nubien kadis). En latin classique,
+                            « chat » se dit felis (d’où, en français, félin, félidés, etc.), mais désigne
+                            uniquement le chat sauvage d’Europe, tandis que cattus s’applique au chat domestique.
+                        </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-icon-button (click)=deletePeople(this.people.id)><i class="material-icons">delete</i></button>
+                        <a href="https://fr.wikipedia.org/wiki/{{people.name}}">
+                            <button mat-icon-button><i class="material-icons">info</i></button></a>
+                    </mat-card-actions>
+                </mat-card>
+            </tr>
+        </table>
+    </div>
+
+    <div style="margin-left: 665px" *ngSwitchCase="'0'">
+        <h1>Nobody found!</h1>
+        <a href="/addPeople"><button mat-button style="margin-left: 15px">Let's add some People!</button></a>
+    </div>
 
 </body>

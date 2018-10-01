@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PeopleLocalService } from '../../shared/services/people-local.service';
 import { People } from '../../shared/models/people.model';
-import { ActivatedRoute } from '@angular/router';
-import { Route } from '@angular/compiler/src/core';
 
 @Component({
   selector: 'collection',
@@ -16,12 +14,16 @@ export class CollectionComponent implements OnInit {
   constructor(private peopleService: PeopleLocalService) { }
 
   ngOnInit() {
-    
+
     this.peopleService.getPeople().subscribe(
-      async(peoples: People[]) => {
+      async (peoples: People[]) => {
         this.people = await peoples;
-        console.log(this.people);
       });
 
+  }
+
+  deletePeople(id) {
+
+    this.peopleService.deletePeople(id);
   }
 }
