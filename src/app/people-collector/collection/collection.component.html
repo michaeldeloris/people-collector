@@ -28,7 +28,7 @@
                     </mat-card-content>
                     <mat-card-actions>
                         <button mat-icon-button (click)=deletePeople(this.people.id)><i class="material-icons">delete</i></button>
-                        <a href="https://fr.wikipedia.org/wiki/{{people.name}}">
+                        <a target="_blank" href="https://en.wikipedia.org/wiki/{{people.name}}">
                             <button mat-icon-button><i class="material-icons">info</i></button></a>
                     </mat-card-actions>
                 </mat-card>
@@ -38,7 +38,7 @@
 
     <div style="margin-left: 665px" *ngSwitchCase="'0'">
         <h1>Nobody found!</h1>
-        <a href="/addPeople"><button mat-button style="margin-left: 15px">Let's add some People!</button></a>
+        <a href="/addPeople"><button mat-button style="margin-left: 15px">Let's add some People</button></a>
     </div>
 
 </body>

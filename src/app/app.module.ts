@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { PeopleCollectorModule } from './people-collector/people-collector.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { JsonpModule, Jsonp, Response } from '@angular/http';
 import { StorageServiceModule } from 'angular-webstorage-service';
 import { MatCardModule } from '@angular/material/card';
 
@@ -22,6 +23,7 @@ import { MatCardModule } from '@angular/material/card';
     BrowserAnimationsModule,
     StorageServiceModule,
     MatCardModule,
+    JsonpModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
