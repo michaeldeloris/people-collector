@@ -1,27 +1,36 @@
 # PeopleCollector
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.2.
+
+People Collector is an app that allows you to enter people's name and stock them locally in a collection. You can also see your collection, wich display you peoples and contains clickable buttons for each of them. They permit you to delete them or being redirect to the people's Wikipedia page.
+
+#### Git clone of this repository:
+```
+$ git clone https://github.com/michaeldeloris/people-collector
+```
+
+## Prerequisites
+
+This app is using Angular Material : https://material.angular.io/guide/getting-started.
+
+And also the local storage package for Angular: https://www.npmjs.com/package/@ngx-pwa/local-storage.
+
+## Functioning
+
+When you add a name, the app will create an object People and attribute him an random and unique ID and the name you entered. The People is pushed in an array wich is stocked locally in your browser.
+Then the array is recovered asynchronously by the collection and displayed when you navigate on it.
+
+## Demonstration
+
+![peopleCollector](ressources/demonstrations/peopleCollector.gif)
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## License
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Build
+## Informations
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+This project was generated with Angular CLI version 6.2.2.
