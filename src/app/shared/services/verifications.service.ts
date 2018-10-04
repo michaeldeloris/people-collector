@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { LocalStorage } from '@ngx-pwa/local-storage';
 import { People } from '../models/people.model';
 import { Jsonp } from '@angular/http';
-
-
+import { forEach } from '@angular/router/src/utils/collection';
 
 @Injectable({
   providedIn: 'root'
@@ -28,30 +27,13 @@ export class VerificationsService {
     }
   }
 
-  isMatchingName(name) {                    //Check is new People's name is matching with a wiki page.
+  isMatchingId(pageId) {                    //Check if there is a wiki page associate with the id.
 
-    var url = `https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=${name}`;
-    var xhr = new XMLHttpRequest();
-
-    xhr.open('GET', url, true);
-    xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
-    xhr.setRequestHeader("Origin", "http://localhost:4200/addPeople");
-
-
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState == 4 && xhr.status == 200) {
-        var resp = xhr.responseText;
-        var parsedResp = parseInt(resp);
-
-        if (isNaN(parsedResp)) {
-          console.log('if');
-
-        } else {
-          console.log('else');
-
-        }
-      }
+    if (pageId == -1) {
+      return false;
+    }else{
+      return true;
     }
-    xhr.send(null);
+    
   }
 }
