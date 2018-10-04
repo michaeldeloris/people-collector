@@ -9,6 +9,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { JsonpModule, Jsonp, Response } from '@angular/http';
 import { StorageServiceModule } from 'angular-webstorage-service';
 import { MatCardModule } from '@angular/material/card';
+import { MatSnackBarModule } from '@angular/material';
+import { MatDialogModule } from '@angular/material';
+
 
 @NgModule({
   declarations: [
@@ -24,6 +27,8 @@ import { MatCardModule } from '@angular/material/card';
     StorageServiceModule,
     MatCardModule,
     JsonpModule,
+    MatSnackBarModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
