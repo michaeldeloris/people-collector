@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PeopleLocalService } from '../../shared/services/people-local.service';
 import { People } from '../../shared/models/people.model';
+import { WikiApiService } from '../../shared/services/wiki-api.service';
 
 @Component({
   selector: 'collection',
@@ -10,8 +11,12 @@ import { People } from '../../shared/models/people.model';
 export class CollectionComponent implements OnInit {
 
   private people: People[] = [];
+  private resumes = [];
 
-  constructor(private peopleService: PeopleLocalService) { }
+  constructor(
+    private peopleService: PeopleLocalService,
+    private wikiApi: WikiApiService,
+  ) { }
 
   ngOnInit() {
 
@@ -19,6 +24,7 @@ export class CollectionComponent implements OnInit {
       async (peoples: People[]) => {
         this.people = await peoples;
       });
+
 
   }
 
