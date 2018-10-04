@@ -9,6 +9,9 @@
                     [formControl]="nameCheck" required>
                 <mat-error *ngIf="nameCheck.invalid">{{getErrorMessage()}}</mat-error>
             </mat-form-field>
+            <button mat-icon-button (click)="openInfoForm()" style="margin-bottom: 35px; margin-left: 15px" class="material-icons">
+                text_format
+            </button>
         </mat-grid-tile>
 
     </mat-grid-list>

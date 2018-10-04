@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormsModule, ReactiveFormsModule, NgForm, } from '@angular/forms';
 import { PeopleLocalService } from '../../shared/services/people-local.service';
-import { Location } from '@angular/common';
 import { People } from '../../shared/models/people.model';
-import { ActivatedRoute, Router } from '@angular/router';
+import { SnackbarService } from '../../shared/services/snackbar.service';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
+
+
 
 @Component({
   selector: 'form-toolbar',
@@ -13,10 +15,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class FormToolbarComponent {
 
   constructor(
-    private location: Location,
     private peopleService: PeopleLocalService,
-    private route: ActivatedRoute,
-    private router: Router,
+    private snackBar: SnackbarService,
+    private dialog: MatDialog,
   ) { }
 
   pattern = '^[a-zA-Z]+(([\',. -][a-zA-Z ])?[a-zA-Z]*)*$';
@@ -32,17 +33,18 @@ export class FormToolbarComponent {
   newPeople(peopleName): void {
     if (this.nameCheck.hasError('required')) {
 
-      alert('Please enter a name')
+      this.snackBar.errorNameMissing();
     } else if (this.nameCheck.hasError('pattern')) {
 
-      alert('Please enter a name with letters only')
+      this.snackBar.errorNameLettersOnly();
     } else {
 
       let newPeople: People = {
         "id": "",
-        "name": peopleName
+        "name": peopleName,
+        "resume": "No resume to show for this one!",
       };
-      
+
       this.peopleService.storeOnLocalStorage(newPeople);
     }
   }
@@ -50,5 +52,9 @@ export class FormToolbarComponent {
   deletePeople(peopleName): void {
 
     this.peopleService.deletePeople(peopleName);
+  };
+
+  openInfoForm() {
+    console.log('In progress...');
   }
 }
