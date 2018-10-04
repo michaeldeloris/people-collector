@@ -8,8 +8,9 @@ import { SharedModule } from '../shared/shared.module';
 import { AddPeopleComponent } from './add-people/add-people.component';
 import { FormToolbarComponent } from './form-toolbar/form-toolbar.component';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { HttpClientModule } from  '@angular/common/http';
-import {MatCardModule} from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http';
+import { MatCardModule } from '@angular/material/card';
+import { JsonpModule, Jsonp, Response } from '@angular/http';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import {MatCardModule} from '@angular/material/card';
     PeopleCollectorRoutingModule,
     SharedModule,
     MatCardModule,
+    JsonpModule,
   ],
   declarations: [
     PeopleCollectorComponent,
@@ -29,7 +31,7 @@ import {MatCardModule} from '@angular/material/card';
   ],
   exports: [
     PeopleCollectorComponent,
-    CollectionComponent
+    CollectionComponent,
   ],
   providers: [
     HttpClientModule,
