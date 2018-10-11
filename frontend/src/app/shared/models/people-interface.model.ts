@@ -1,4 +1,3 @@
-
 export interface PeopleInterface{
 
     id: string;

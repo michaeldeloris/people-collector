@@ -24,4 +24,8 @@ export class SnackbarService {
     return this.snackBar.open('Please use letters only', 'OK');
   }
 
+  existingPeople(){
+    return this.snackBar.open('People already exists !', 'OK');
+  }
+
 }

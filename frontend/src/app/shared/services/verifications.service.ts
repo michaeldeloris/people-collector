@@ -14,10 +14,10 @@ export class VerificationsService {
     protected jsonp: Jsonp,
   ) { }
 
-  isUniqueName(name): boolean {         //Check if new People's name isn't already used.
+  isUniqueName(name): boolean {         //Check if new People's name isn't already used (ignoring uppercases).
 
     var people: People[] = JSON.parse(localStorage.getItem('peoples') || "[]");
-    var peopleindex = people.findIndex(People => People.name === name);
+    var peopleindex = people.findIndex(People => People.name.toLowerCase() === name.toLowerCase());
     if (peopleindex != -1) {
 
       return false;
@@ -31,9 +31,9 @@ export class VerificationsService {
 
     if (pageId == -1) {
       return false;
-    }else{
+    } else {
       return true;
     }
-    
+
   }
 }
