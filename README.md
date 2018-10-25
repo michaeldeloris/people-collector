@@ -16,12 +16,12 @@ And also the local storage package for Angular: https://www.npmjs.com/package/@n
 
 ## Functioning
 
-When you add a name, the app will create an object People and attribute him an random and unique ID and the name you entered. The People is pushed in an array wich is stocked locally in your browser.
-Then the array is recovered asynchronously by the collection and displayed when you navigate on it.
+When you add a name, the app will create an object People, give him an random and unique ID and the resume matching with his name on the wiki app. The People is pushed in an array wich is stocked locally in your browser.
+Then the array is recovered asynchronously by the Collection and displayed on his page.
 
 ## Demonstration
 
-![peopleCollector](ressources/demonstrations/peopleCollector.gif)
+![peopleCollector](frontend/ressources/demonstrations/peopleCollectorDemo.gif)
 
 ## Development server
 
