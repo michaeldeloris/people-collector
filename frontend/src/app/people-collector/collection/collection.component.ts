@@ -20,15 +20,11 @@ export class CollectionComponent implements OnInit {
 
   ngOnInit() {
 
-    // this.peopleService.getPeople().subscribe(
-    //   async (peoples: People[]) => {
-    //     this.people = await peoples;
-    //   }
-    // );
-
-    this.peopleService.getPeople().subscribe((peoples) => {
-      console.log(peoples);
-    })
+    this.peopleService.getPeople().subscribe(
+      async (peoples: People[]) => {
+        this.people = await peoples;
+      }
+    );
   }
 
   deletePeople(id) {

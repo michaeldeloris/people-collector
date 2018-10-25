@@ -50,7 +50,8 @@ export class FormToolbarComponent {
   }
 
   deletePeople(peopleName): void {
-
+    console.log('delete');
+    
     this.peopleService.deletePeople(peopleName);
   };
 
